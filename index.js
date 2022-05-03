@@ -21,6 +21,7 @@ const API_URL = async() => { //await me sirve para esperar a que mi url termine 
                 </div>
                      `
             });
+            
 
             document.getElementById('burgers1').innerHTML = burgers; // Todo lo que obtuve lo inyecto en mi html de forma dinÁmica.
 
