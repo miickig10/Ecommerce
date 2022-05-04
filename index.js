@@ -17,11 +17,12 @@ const API_URL = async() => { //await me sirve para esperar a que mi url termine 
                      </div>
                      <p> Procedencia: ${burger.country}</p>
                      <h3>Precio $ ${burger.price}</h3>
+                     <button>Agregar al carrito</button>
 
                 </div>
                      `
             });
-            
+
 
             document.getElementById('burgers1').innerHTML = burgers; // Todo lo que obtuve lo inyecto en mi html de forma dinÁmica.
 
@@ -41,3 +42,45 @@ API_URL(); // Es la respuesta a la llamada de API
 
 //PD: ESPERO SE ENTIENDA JAJAJA
 /* sii, esta genial */
+
+
+const API_URL2 = async() => { 
+   
+    try {
+        const respuesta = await fetch("https://ig-food-menus.herokuapp.com/desserts"); 
+        console.log(respuesta);
+
+        if (respuesta.status === 200) { 
+            const datos = await respuesta.json(); 
+
+            let desserts = ""; 
+            datos.forEach(dessert => { 
+                desserts += `
+                <div class="burger-container">
+                     <h2>${dessert.name}</h2>
+                     <div class = "burger">
+                       <img class = "foto" src="${dessert.img}">
+                     </div>
+                     <p> Procedencia: ${dessert.country}</p>
+                     <h3>Precio $ ${dessert.price}</h3>
+                     <button>Agregar al carrito</button>
+                </div>
+                     `
+            });
+
+
+            document.getElementById('desserts').innerHTML = desserts; 
+
+        } else if (respuesta === 404) { 
+            console.log("La página de destino no existe")
+        } else {
+            console.log("Error!!") 
+        }
+
+    } catch (error) { 
+        console.log(error)
+    }
+}
+
+
+API_URL2(); 
