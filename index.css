@@ -6,19 +6,38 @@
     /* Aqui estoy  */
 }
 
+
+.grid {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-auto-rows: auto;
+    row-gap: 3em;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
 p {
     font-size: 20px;
 }
 
+
+button {
+    width: 300px;
+    margin-top: 15px;
+   
+}
+
 .burger-container {
-    width: 290px;
-    height: 300;
+    width: 400px;
+    height: 350px;
     padding: 20px;
     margin: 10px;
 }
 
 .foto {
-    width: 250px;
+    width: 300px;
     height: 250px;
     padding: 10px 0;
 }
