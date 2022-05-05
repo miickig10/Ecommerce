@@ -6,7 +6,6 @@
     /* Aqui estoy  */
 }
 
-
 .grid {
     display: grid;
     grid-template-columns: 33% 33% 33%;
@@ -22,18 +21,20 @@ p {
     font-size: 20px;
 }
 
-
 button {
     width: 300px;
     margin-top: 15px;
-   
+    padding: .8em;
 }
 
-.burger-container {
+.burger-container,
+.desserts-container {
     width: 400px;
     height: 350px;
     padding: 20px;
     margin: 10px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .foto {

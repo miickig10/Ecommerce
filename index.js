@@ -40,25 +40,23 @@ const API_URL = async() => { //await me sirve para esperar a que mi url termine 
 
 API_URL(); // Es la respuesta a la llamada de API
 
-//PD: ESPERO SE ENTIENDA JAJAJA
-/* sii, esta genial */
 
 
-const API_URL2 = async() => { 
-   
+const API_URL2 = async() => { //espero que la URL termine de cargar 
+
     try {
-        const respuesta = await fetch("https://ig-food-menus.herokuapp.com/desserts"); 
-        console.log(respuesta);
+        const respuesta = await fetch("https://ig-food-menus.herokuapp.com/desserts"); //aquí accedo a la api, al menú de postres
+        console.log(respuesta); //imprimo el resultado en consola para ver qué array me traigo
+        //si es correcto, entra por el código 200 y comienzo el proceso
+        if (respuesta.status === 200) {
+            const datos = await respuesta.json();
 
-        if (respuesta.status === 200) { 
-            const datos = await respuesta.json(); 
-
-            let desserts = ""; 
-            datos.forEach(dessert => { 
+            let desserts = "";
+            datos.forEach(dessert => {
                 desserts += `
-                <div class="burger-container">
+                <div class="desserts-container">
                      <h2>${dessert.name}</h2>
-                     <div class = "burger">
+                     <div class = "dessert">
                        <img class = "foto" src="${dessert.img}">
                      </div>
                      <p> Procedencia: ${dessert.country}</p>
@@ -69,18 +67,18 @@ const API_URL2 = async() => {
             });
 
 
-            document.getElementById('desserts').innerHTML = desserts; 
+            document.getElementById('desserts').innerHTML = desserts;
 
-        } else if (respuesta === 404) { 
+        } else if (respuesta === 404) {
             console.log("La página de destino no existe")
         } else {
-            console.log("Error!!") 
+            console.log("Error!!")
         }
 
-    } catch (error) { 
+    } catch (error) {
         console.log(error)
     }
 }
 
 
-API_URL2(); 
+API_URL2();
