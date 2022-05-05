@@ -57,9 +57,15 @@ section {
     text-align: center;
 }
 
+.active {
+    display: block;  
+    animation: fadeInTop 0.6s ease;
+}
+
 .burger-container,
 .desserts-container,
-.drinks-container {
+.drinks-container,
+.sandwiches-container {
     width: 400px;
     height: 350px;
     padding: 20px;
@@ -80,7 +86,7 @@ section {
     background-color: var(--claret-wine);
     color: var(--linen);
     justify-content: space-between;
-    height: 3.5rem;
+    height: 4.5rem;
     padding: 0 20px;
 }
 
@@ -97,9 +103,10 @@ section {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 20%;
+    width: 16%;
     /* Aqui se ajusta dependiendo de la cantidad de enlaces que se tengan en el menu */
 }
+
 
 .navbar__links {
     display: block;
@@ -108,7 +115,7 @@ section {
     font-size: 1.5rem;
     font-weight: 700;
     padding: .5em;
-    width: 100%;
+    width: 60%;
     text-align: center;
     /* Aqui se ajusta dependiendo de la cantidad de enlaces que se tengan en el menu */
 }
@@ -125,4 +132,20 @@ section {
 
 .show-content {
     display: contents;
+}
+
+
+.fade-out-effect {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+}
+
+.fade-out-effect.active {
+    visibility: visible;
+    z-index: 1000;
+    animation: fadeOut 0.3s ease-out;
 }
