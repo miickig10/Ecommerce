@@ -82,3 +82,45 @@ const API_URL2 = async() => { //espero que la URL termine de cargar
 
 
 API_URL2();
+//Para llamar a las bebidas
+const API_URL3 = async() => { //await me sirve para esperar a que mi url termine de cargar
+    //await funcina solamente con funciones asincronicas por eso uso async.
+    try {
+        const respuesta = await fetch("https://ig-food-menus.herokuapp.com/drinks"); // Fetch nos permite acceder y manipular contenido http
+        console.log(respuesta); // La respuesta a mi petición van a ser todas las bebidas
+
+        if (respuesta.status === 200) { // El codigo 200 me dice que esta todo Ok y procedo a acceder al contenido
+            const datos = await respuesta.json(); // Los datos que obtengo son .json
+
+            let bebidas = ""; // Todos los datos que obtenga los voy a guardar en mi variable bebidas
+            datos.forEach(drinks => { // Por cada burguer voY acceder al titulo, la foto, el pais y el precio.
+                bebidas += `
+                <div class="drinks-container">
+                     <h2>${drinks.name}</h2>
+                     <div class = "drink">
+                       <img class = "foto" src="${drinks.img}">
+                     </div>
+                     <p> Procedencia: ${drinks.country}</p>
+                     <h3>Precio $ ${drinks.price}</h3>
+                     <button>Agregar al carrito</button>
+
+                </div>
+                     `
+            });
+
+
+            document.getElementById('drinks').innerHTML = bebidas; // Todo lo que obtuve lo inyecto en mi html de forma dinÁmica.
+
+        } else if (respuesta === 404) { // Si la pagina no entró por el cofigo 200, puede largar error 404
+            console.log("La página de destino no existe")
+        } else {
+            console.log("Error!!") // si tenemos un error desconocido puede salir esto.
+        }
+
+    } catch (error) { // can catch capturamos el error desde consola e intentamos solucionarlo.
+        console.log(error)
+    }
+}
+
+
+API_URL3(); // Es la respuesta a la llamada de API

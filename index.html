@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menú</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="styles/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
@@ -16,12 +16,12 @@
 
     <header>
         <nav class="menu">
-            <ul>
-                <li><img src="" alt="Logo"></li>
-                <li><a href="#burgers1">Burgers</a></li>
-                <li><a href="#desserts">Postres</a></li>
-                <li><a href="#drinks">Bebidas</a></li>
-                <li><a href="#cart"><span class="iconify" data-icon="clarity:shopping-cart-line"></span></a></li>
+            <ul class="navbar_items">
+                <li class="navbar_item"><img src="" alt="Logo"></li>
+                <li class="navbar_item"><a href="#burgers1" class="navbar__links">Burgers</a></li>
+                <li class="navbar_item"><a href="#desserts" class="navbar__links">Postres</a></li>
+                <li class="navbar_item"><a href="#drinks" class="navbar__links">Bebidas</a></li>
+                <li class="navbar_item"><a href="#cart" class="navbar__links"><span class="iconify" data-icon="clarity:shopping-cart-line"></span></a></li>
             </ul>
         </nav>
 
@@ -29,7 +29,7 @@
     <main>
 
         <section class="burgers active">
-            <h3>Burgers</h3>
+            <h3 class="section-title">Burgers</h3>
 
             <div class="contenido grid" id="burgers1">
 
@@ -37,7 +37,7 @@
         </section>
 
         <section class="desserts">
-            <h3>Postres</h3>
+            <h3 class="section-title">Postres</h3>
 
             <div class=" contenido grid" id="desserts">
 
@@ -45,7 +45,7 @@
         </section>
 
         <section class="drinks">
-            <h3>Drinks</h3>
+            <h3 class="section-title">Drinks</h3>
             <div class="contenido grid" id="drinks">
 
             </div>

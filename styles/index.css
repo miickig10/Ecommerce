@@ -1,0 +1,128 @@
+:root {
+    --background-pink: #Eee4e1;
+    --claret-wine: #87163d;
+    --yellow: #c7ac52;
+    /*   --dust-black: #c7ac52; */
+    --new-york-pink: #CC8B86;
+    --linen: #f9eae1;
+    --eire-black: #141414;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+
+body {
+    /*     overflow: hidden; */
+    background-color: var(--background-pink);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-auto-rows: auto;
+    row-gap: 7em;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 20px;
+}
+
+button {
+    width: 300px;
+    margin-top: 15px;
+    padding: .8em;
+    background-color: var(--new-york-pink);
+    color: var(--claret-wine);
+    font-weight: bolder;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+}
+
+section {
+    margin-top: 2%;
+    margin-bottom: 4rem;
+    padding-bottom: 2rem;
+}
+
+.section-title {
+    text-align: center;
+}
+
+.burger-container,
+.desserts-container,
+.drinks-container {
+    width: 400px;
+    height: 350px;
+    padding: 20px;
+    margin: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.foto {
+    width: 300px;
+    height: 250px;
+    padding: 10px 0;
+    border-radius: 8%;
+}
+
+.menu {
+    display: flex;
+    background-color: var(--claret-wine);
+    color: var(--linen);
+    justify-content: space-between;
+    height: 3.5rem;
+    padding: 0 20px;
+}
+
+.navbar_items {
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.navbar_item {
+    float: left;
+    list-style: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 20%;
+    /* Aqui se ajusta dependiendo de la cantidad de enlaces que se tengan en el menu */
+}
+
+.navbar__links {
+    display: block;
+    text-decoration: none;
+    color: var(--linen);
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: .5em;
+    width: 100%;
+    text-align: center;
+    /* Aqui se ajusta dependiendo de la cantidad de enlaces que se tengan en el menu */
+}
+
+.navbar__links:hover {
+    background-color: var(--yellow);
+    color: var(--eire-black);
+    transition: background-color .5s ease-in-out 0s;
+}
+
+.hide-content {
+    display: none;
+}
+
+.show-content {
+    display: contents;
+}
